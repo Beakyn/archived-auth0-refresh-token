@@ -23,8 +23,13 @@ const handler = async (req, res) => {
   try {
     if (req.method === 'GET') {
       const { data } = await getRefreshToken(q);
-
-      return send(res, 200, data);
+      const {refresh_token, ...rest} = data;
+      // TODO: save refresh_token by user uid
+      /**
+       * const {uid} = decodeJwt(rest.access_token);
+       * await updateUserStorage(uid, refresh_token);
+       */
+      return send(res, 200, rest);
     }
 
     return send(res, 405, 'Invalid Method');
@@ -36,5 +41,9 @@ const handler = async (req, res) => {
     return send(res, errorResp.status, { ...errorResp.data });
   }
 };
+
+const updateUserStorage = async (uid, refresh_token) => 
+  axios.post(`${'<OTHER_MICRO_SERVICE_ENDPOINT>'}`, {[uid]: refresh_token});
+
 
 module.exports = cors(handler);
