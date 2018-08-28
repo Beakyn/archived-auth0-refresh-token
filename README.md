@@ -1,6 +1,6 @@
 # Auth0 Refresh Token
 
-A generic serverless service to generate Auth0 refresh tokens. It runs on Zeit's Now as a Docker deployment.
+A generic serverless service to generate [Auth0 refresh tokens](https://auth0.com/docs/tokens/refresh-token/current). It runs on Zeit's Now as a [Docker](https://zeit.co/docs/deployment-types/docker) deployment.
 
 ### Install & run locally
 
