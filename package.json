@@ -1,0 +1,23 @@
+{
+  "name": "auth0-refresh-token",
+  "main": "./src/index.js",
+  "bin": "./src/main.js",
+  "license": "UNLICENSED",
+  "author": {
+    "name": "Beakyn",
+    "email": "contact@beakyn.com"
+  },
+  "scripts": {
+    "dev": "micro-dev",
+    "inspect": "node --inspect node_modules/.bin/micro-dev"
+  },
+  "dependencies": {
+    "axios": "0.18.0",
+    "micro": "9.3.3",
+    "micro-cors": "0.1.0",
+    "micro-query": "0.3.0"
+  },
+  "devDependencies": {
+    "micro-dev": "3.0.0"
+  }
+}
